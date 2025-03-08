@@ -10,6 +10,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ThesisManagementDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ThesisDB")));
 
+// Add this line in the service registration section:
+builder.Services.AddScoped<MyAspNetCoreApp.Services.AdvisorAssignmentService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

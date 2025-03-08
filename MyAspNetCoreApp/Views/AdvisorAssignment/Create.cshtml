@@ -1,0 +1,60 @@
+@model MyAspNetCoreApp.Models.ViewModels.AssignAdvisorViewModel
+
+@{
+    ViewData["Title"] = "Thêm mới phân công giảng viên hướng dẫn";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group mb-3">
+                <label asp-for="SelectedSinhVienId" class="control-label"></label>
+                <select asp-for="SelectedSinhVienId" class="form-control">
+                    <option value="">-- Chọn sinh viên --</option>
+                    @foreach (var sinhVien in Model.AvailableSinhViens)
+                    {
+                        <option value="@sinhVien.SinhVienId">@sinhVien.MaSinhVien - @sinhVien.HoTen</option>
+                    }
+                </select>
+                <span asp-validation-for="SelectedSinhVienId" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group mb-3">
+                <label asp-for="SelectedGiangVienId" class="control-label"></label>
+                <select asp-for="SelectedGiangVienId" class="form-control">
+                    <option value="">-- Chọn giảng viên --</option>
+                    @foreach (var giangVien in Model.AvailableGiangViens)
+                    {
+                        <option value="@giangVien.GiangVienId">@giangVien.MaGiangVien - @giangVien.HoTen</option>
+                    }
+                </select>
+                <span asp-validation-for="SelectedGiangVienId" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group mb-3">
+                <label asp-for="NgayBatDau" class="control-label"></label>
+                <input asp-for="NgayBatDau" class="form-control" type="date" />
+                <span asp-validation-for="NgayBatDau" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group mb-3">
+                <label asp-for="GhiChu" class="control-label"></label>
+                <textarea asp-for="GhiChu" class="form-control"></textarea>
+                <span asp-validation-for="GhiChu" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group mb-3">
+                <input type="submit" value="Lưu" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

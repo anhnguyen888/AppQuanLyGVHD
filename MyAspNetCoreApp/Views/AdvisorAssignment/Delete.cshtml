@@ -1,0 +1,43 @@
+@model MyAspNetCoreApp.Models.SinhVienGiangVienHuongDan
+
+@{
+    ViewData["Title"] = "Xóa phân công giảng viên hướng dẫn";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="alert alert-danger">
+    <h3>Bạn có chắc chắn muốn xóa phân công này?</h3>
+</div>
+
+<div class="card mb-4">
+    <div class="card-header">
+        Thông tin phân công
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">Mã sinh viên:</dt>
+            <dd class="col-sm-9">@Model.SinhVien.MaSinhVien</dd>
+            
+            <dt class="col-sm-3">Tên sinh viên:</dt>
+            <dd class="col-sm-9">@Model.SinhVien.HoTen</dd>
+            
+            <dt class="col-sm-3">Mã giảng viên:</dt>
+            <dd class="col-sm-9">@Model.GiangVien.MaGiangVien</dd>
+            
+            <dt class="col-sm-3">Tên giảng viên:</dt>
+            <dd class="col-sm-9">@Model.GiangVien.HoTen</dd>
+            
+            <dt class="col-sm-3">Ngày bắt đầu:</dt>
+            <dd class="col-sm-9">@Model.NgayBatDau.ToString("dd/MM/yyyy")</dd>
+            
+            <dt class="col-sm-3">Ghi chú:</dt>
+            <dd class="col-sm-9">@Model.GhiChu</dd>
+        </dl>
+    </div>
+</div>
+
+<form asp-action="Delete">
+    <input type="submit" value="Xóa" class="btn btn-danger" />
+    <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+</form>
