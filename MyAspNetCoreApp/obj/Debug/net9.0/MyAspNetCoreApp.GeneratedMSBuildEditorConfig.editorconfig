@@ -44,6 +44,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/AnhNguyen/Documents/webs4/AppQuanLyGVHD/MyAspNetCoreApp/Views/SinhVien/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2luaFZpZW5cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/AnhNguyen/Documents/webs4/AppQuanLyGVHD/MyAspNetCoreApp/Views/SinhVien/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2luaFZpZW5cRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/AnhNguyen/Documents/webs4/AppQuanLyGVHD/MyAspNetCoreApp/Views/SinhVien/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2luaFZpZW5cRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/AnhNguyen/Documents/webs4/AppQuanLyGVHD/MyAspNetCoreApp/Views/SinhVien/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2luaFZpZW5cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/AnhNguyen/Documents/webs4/AppQuanLyGVHD/MyAspNetCoreApp/Views/SinhVien/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2luaFZpZW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

@@ -1,0 +1,39 @@
+@model MyAspNetCoreApp.Models.SinhVien
+
+@{
+    ViewData["Title"] = "Thêm mới sinh viên";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group mb-3">
+                <label asp-for="HoTen" class="control-label">Họ tên</label>
+                <input asp-for="HoTen" class="form-control" />
+                <span asp-validation-for="HoTen" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="MaSinhVien" class="control-label">Mã sinh viên</label>
+                <input asp-for="MaSinhVien" class="form-control" />
+                <span asp-validation-for="MaSinhVien" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Lop" class="control-label">Lớp</label>
+                <input asp-for="Lop" class="form-control" />
+                <span asp-validation-for="Lop" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <input type="submit" value="Thêm mới" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Trở về</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
