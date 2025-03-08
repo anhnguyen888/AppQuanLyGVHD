@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using MyAspNetCoreApp.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Đăng ký DbContext
+builder.Services.AddDbContext<ThesisManagementDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ThesisDB")));
 
 var app = builder.Build();
 
