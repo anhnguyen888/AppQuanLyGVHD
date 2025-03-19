@@ -1,7 +1,9 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyAspNetCoreApp.Models;
 
+[Authorize (Policy = "AdminOnly")]
 public class SinhVienController : Controller
 {
     private readonly ThesisManagementDbContext _context;
