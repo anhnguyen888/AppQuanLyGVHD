@@ -36,12 +36,14 @@ public class SinhVienController : Controller
         return View(sinhVien);
     }
 
+    [Authorize(Roles = "Admin")]
     // GET: SinhVien/Create
     public IActionResult Create()
     {
         return View();
     }
-
+    
+    [Authorize(Roles = "Admin")]
     // POST: SinhVien/Create
     [HttpPost]
     [ValidateAntiForgeryToken]
@@ -57,6 +59,7 @@ public class SinhVienController : Controller
     }
 
     // GET: SinhVien/Edit/5
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Edit(int? id)
     {
         if (id == null)
@@ -73,6 +76,7 @@ public class SinhVienController : Controller
     }
 
     // POST: SinhVien/Edit/5
+    [Authorize(Roles = "Admin")]
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Edit(int id, [Bind("SinhVienId,HoTen,MaSinhVien,Lop")] SinhVien sinhVien)
@@ -105,6 +109,7 @@ public class SinhVienController : Controller
         return View(sinhVien);
     }
 
+    [Authorize(Roles = "Admin")]
     // GET: SinhVien/Delete/5
     public async Task<IActionResult> Delete(int? id)
     {
@@ -123,6 +128,7 @@ public class SinhVienController : Controller
         return View(sinhVien);
     }
 
+    [Authorize(Roles = "Admin")]
     // POST: SinhVien/Delete/5
     [HttpPost, ActionName("Delete")]
     [ValidateAntiForgeryToken]
