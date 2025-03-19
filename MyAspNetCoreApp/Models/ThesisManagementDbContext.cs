@@ -21,6 +21,8 @@ public partial class ThesisManagementDbContext : DbContext
 
     public virtual DbSet<SinhVienGiangVienHuongDan> SinhVienGiangVienHuongDans { get; set; }
 
+    public virtual DbSet<User> Users { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=ThesisManagementDB;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=true;");
@@ -78,6 +80,18 @@ public partial class ThesisManagementDbContext : DbContext
             entity.HasOne(d => d.SinhVien).WithMany(p => p.SinhVienGiangVienHuongDans)
                 .HasForeignKey(d => d.SinhVienId)
                 .HasConstraintName("FK__SinhVienG__SinhV__3E52440B");
+        });
+
+        modelBuilder.Entity<User>(entity =>
+        {
+            entity.Property(e => e.CreatedDate)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.Email).HasMaxLength(100);
+            entity.Property(e => e.IsActive).HasDefaultValue(true);
+            entity.Property(e => e.PasswordHash).HasMaxLength(255);
+            entity.Property(e => e.Role).HasMaxLength(50);
+            entity.Property(e => e.Username).HasMaxLength(100);
         });
 
         OnModelCreatingPartial(modelBuilder);
